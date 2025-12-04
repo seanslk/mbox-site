@@ -51,21 +51,14 @@ export default function Home() {
       <section id="gallery" className="section" style={{ padding: 'var(--spacing-xl) 0', textAlign: 'center' }}>
         <div className="container">
           <h2 style={{ fontSize: '3rem', marginBottom: 'var(--spacing-lg)' }}>产品图赏</h2>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'var(--spacing-md)',
-            marginBottom: 'var(--spacing-xl)'
-          }}>
+          <div className={styles.galleryGrid}>
             {['/images/image4.jpeg', '/images/image6.png', '/images/image7.jpeg', '/images/image8.png'].map((src, idx) => (
-              <div key={idx} style={{ borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
+              <div key={idx} className={styles.galleryItem}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={getImagePath(src)}
                   alt={`Gallery ${idx}`}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.3s ease' }}
-                  onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                  onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  className={styles.galleryImage}
                 />
               </div>
             ))}
