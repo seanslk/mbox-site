@@ -5,20 +5,8 @@ import styles from './Hero.module.css';
 export const Hero = () => {
     return (
         <section id="hero" className={styles.hero}>
-            <div className={styles.background}>
-                <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    backgroundImage: `url(${process.env.NODE_ENV === 'production' ? '/mbox-site' : ''}/images/image1.png)`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    opacity: 0.6
-                }} />
-                <div className={styles.overlay} />
-            </div>
+            <div className={styles.aurora} />
+            <div className={styles.grid} />
 
             <div className={styles.container}>
                 <div className={styles.content}>
