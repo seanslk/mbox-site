@@ -1,6 +1,7 @@
 .section {
   padding: var(--spacing-xl) 0;
-  background-color: #050b14;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
@@ -15,53 +16,74 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: var(--spacing-sm);
 }
 
 .subtitle {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-md);
+.featureRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: var(--spacing-md);
-  border-radius: 16px;
+.featureRow:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.featureContent {
+  flex: 1;
+}
+
+.featureImage {
+  flex: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform var(--transition-normal);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.05);
+.featureImage:hover {
+  transform: scale(1.02);
+}
+
+.featureImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.featureTitle {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-accent);
+}
+
+.featureDesc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(59, 130, 246, 0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-md);
-  font-size: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
 }
 
-.cardTitle {
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-xs);
-}
-
-.cardText {
-  color: var(--text-secondary);
-  line-height: 1.6;
+@media (max-width: 768px) {
+  .featureRow, .featureRow:nth-child(even) {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
 }

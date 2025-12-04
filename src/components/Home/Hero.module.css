@@ -15,22 +15,44 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(2, 6, 23, 0.3) 0%, rgba(2, 6, 23, 0.8) 80%, rgba(2, 6, 23, 1) 100%);
+  z-index: 1;
 }
 
 .content {
   text-align: center;
-  max-width: 800px;
+  max-width: 900px;
   padding: 0 var(--spacing-sm);
-  z-index: 1;
+  z-index: 2;
+  animation: fadeUp 1s ease-out;
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: var(--spacing-md);
   letter-spacing: -0.03em;
+  text-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtitle {

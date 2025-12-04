@@ -45,6 +45,25 @@ export default function ProductsPage() {
                 <ComponentList categories={[structuralComponents, electronicComponents]} />
 
                 <div style={{ marginTop: 'var(--spacing-xl)', textAlign: 'center' }}>
+                    <h2 style={{ marginBottom: 'var(--spacing-md)' }}>产品图赏</h2>
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                        gap: 'var(--spacing-md)',
+                        marginBottom: 'var(--spacing-xl)'
+                    }}>
+                        {['/images/image4.jpeg', '/images/image6.png', '/images/image7.jpeg', '/images/image8.png'].map((src, idx) => (
+                            <div key={idx} style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={`${process.env.NODE_ENV === 'production' ? '/mbox-site' : ''}${src}`}
+                                    alt={`Gallery ${idx}`}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                                />
+                            </div>
+                        ))}
+                    </div>
+
                     <h2 style={{ marginBottom: 'var(--spacing-md)' }}>无限扩展</h2>
                     <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--spacing-md)', maxWidth: '800px', margin: '0 auto var(--spacing-md)' }}>
                         得益于磁吸底座，你可以轻松扩展更多工具，如剪线钳、吸锡枪、示波器等。

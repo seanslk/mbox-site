@@ -16,8 +16,9 @@ export const Hero = () => {
                     backgroundImage: `url(${process.env.NODE_ENV === 'production' ? '/mbox-site' : ''}/images/image1.png)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    opacity: 0.3
+                    opacity: 0.6
                 }} />
+                <div className={styles.overlay} />
             </div>
             <div className={styles.content}>
                 <h1 className={styles.title}>
