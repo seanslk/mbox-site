@@ -3,6 +3,7 @@ import { Hero } from '@/components/Home/Hero';
 import { Features } from '@/components/Home/Features';
 import { ComponentList } from '@/components/MBox/ComponentList';
 import { Button } from '@/components/Common/Button';
+import styles from './Home.module.css';
 
 const structuralComponents = {
   title: '结构部件',
