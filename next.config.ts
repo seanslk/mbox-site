@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'xiaozhisite'; // Assumed repo name
+const repoName = 'mbox-site'; // Correct repo name
 
 const nextConfig: NextConfig = {
   output: 'export',
