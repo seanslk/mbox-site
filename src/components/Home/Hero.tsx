@@ -13,7 +13,7 @@ export const Hero = () => {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundImage: 'url(/images/image1.png)',
+                    backgroundImage: `url(${process.env.NODE_ENV === 'production' ? '/mbox-site' : ''}/images/image1.png)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     opacity: 0.3

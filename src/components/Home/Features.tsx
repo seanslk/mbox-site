@@ -31,7 +31,7 @@ export const Features = () => {
                 {/* Add the GIF to show the folding mechanism */}
                 <div style={{ maxWidth: '800px', margin: '0 auto var(--spacing-xl)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/image3.gif" alt="MBox Folding Animation" style={{ width: '100%', display: 'block' }} />
+                    <img src={`${process.env.NODE_ENV === 'production' ? '/mbox-site' : ''}/images/image3.gif`} alt="MBox Folding Animation" style={{ width: '100%', display: 'block' }} />
                 </div>
 
                 <div className={styles.grid}>
