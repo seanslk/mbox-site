@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { Button } from '../Common/Button';
 import styles from './Navbar.module.css';
 
@@ -19,21 +18,20 @@ export const Navbar = () => {
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
             <div className={styles.container}>
-                <Link href="/" className={styles.logo}>
-                    Xiaozhi
-                </Link>
+                <a href="#hero" className={styles.logo}>
+                    MBox
+                </a>
 
                 <div className={styles.links}>
-                    <Link href="/" className={styles.link}>首页</Link>
-                    <Link href="/products" className={styles.link}>产品清单</Link>
-                    <Link href="/about" className={styles.link}>关于我们</Link>
-                    <Link href="/contact" className={styles.link}>加入社区</Link>
+                    <a href="#hero" className={styles.link}>首页</a>
+                    <a href="#features" className={styles.link}>特性</a>
+                    <a href="#gallery" className={styles.link}>图赏</a>
+                    <a href="#specs" className={styles.link}>清单</a>
+                    <a href="#about" className={styles.link}>关于</a>
+                    <a href="#contact" className={styles.link}>社区</a>
                 </div>
 
                 <div className={styles.actions}>
-                    <Button variant="secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                        登录
-                    </Button>
                     <Button style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
                         立即购买
                     </Button>
